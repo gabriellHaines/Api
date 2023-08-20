@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teste API</title>
+</head>
+<body>
+    <script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+    <script>
+        const newVeiculo = {
+            ent_id: 1,
+            vei_modelo: 'Modelo',
+            vei_marca: 'Marca',
+            vei_placa: 'ABC1234',
+            vei_ano: 2023,
+            vei_cor: 'Vermelho',
+            vei_tipo: 'Sedan'
+        };
+
+        axios.post('http://localhost:3333/Veiculos', newVeiculo)
+            .then(response => {
+                console.log('Veículo inserido com sucesso:', response.data);
+            })
+            .catch(error => {
+                console.error('Erro ao inserir veículo:', error);
+            });
+    </script>
+</body>
+</html>
